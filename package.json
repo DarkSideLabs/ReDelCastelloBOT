@@ -1,0 +1,19 @@
+{
+  "name": "redelcastellobot",
+  "version": "1.0.0",
+  "description": "bot telegram dedicato al clan re del castello",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkSideLabs/redelcastello.git"
+  },
+  "author": "DarkSideLabs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarkSideLabs/redelcastello/issues"
+  },
+  "homepage": "https://github.com/DarkSideLabs/redelcastello#readme"
+}

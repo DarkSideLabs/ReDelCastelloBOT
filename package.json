@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DarkSideLabs/redelcastello/issues"
   },
-  "homepage": "https://github.com/DarkSideLabs/redelcastello#readme"
+  "homepage": "https://github.com/DarkSideLabs/redelcastello#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.50.0"
+  }
 }

@@ -1,33 +1,23 @@
 process.env.NTBA_FIX_319 = 1;
+/** token ReDelCastello_BOT */
 const TOKEN = process.env.TELEGRAM_TOKEN || '1328058614:AAETGD56cXKya-YtiPok4Ua09sMZVfMcFmU';
 const TelegramBot = require('node-telegram-bot-api');
 /* ------------------------------------------------------------- HEROKU */
-const options = {
-  webHook: {
-    port: process.env.PORT
-  }
-};
-// Heroku routes from port :443 to $PORT
-// Add URL of your app to env variable or enable Dyno Metadata
-// to get this automatically
-// See: https://devcenter.heroku.com/articles/dyno-metadata
+const options = { webHook: { port: process.env.PORT } };
+/** Link app a cui collegarsi e porta da usare */
 const url = process.env.APP_URL || 'https://redelcastello-bot.herokuapp.com:443';
-const bot = new TelegramBot(TOKEN, options);
-
-
-// This informs the Telegram servers of the new webhook.
-// Note: we do not need to pass in the cert, as it already provided
-bot.setWebHook(`${url}/bot${TOKEN}`);
+const ReDelCastello = new TelegramBot(TOKEN, options);
+ReDelCastello.setWebHook(`${url}/bot${TOKEN}`);
 
 
 // Just to ping!
-bot.on('message', function onMessage(msg) {
-  bot.sendMessage(msg.chat.id, 'I am alive on Heroku!');
+ReDelCastello.on('message', function onMessage(msg) {
+  ReDelCastello.sendMessage(msg.chat.id, 'I am alive on Heroku!');
 });
 /* -------------------------------------------------------------------- */
 /* ------------------------------------------------------ DICHIARAZIONI */
 //const claYale = require('./bot');
-const claYale = bot;
+const claYale = ReDelCastello;
 //let idChat = require('./variabili').idChat;
 //const cRoyale = require('./croyale');
 //const varandas = require('./varandas');
@@ -35,8 +25,13 @@ const claYale = bot;
 
 /* ------------------------------------------------------------ CROYALE */
 claYale.onText(/\/player/, msg => {
-  idChat = msg.chat.id;
-  varandas.getPlayer(idChat);
+  try {
+    idChat = msg.chat.id;
+    varandas.getPlayer(idChat);
+  } catch (e) {
+    ReDelCastello.sendMessage(msg.chat.id, "c'è stato un errore");
+    ReDelCastello.sendMessage(msg.chat.id, e);
+  }
 })
 
 claYale.onText(/\/cards/, msg => {

@@ -4,7 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 /* ------------------------------------------------------------- HEROKU */
 const options = {
   webHook: {
-    port: process.env.PORT || '443'
+    port: process.env.PORT
   }
 };
 // Heroku routes from port :443 to $PORT

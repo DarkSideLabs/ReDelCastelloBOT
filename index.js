@@ -30,7 +30,6 @@ claYale.onText(/\/player/, msg => {
     varandas.getPlayer(idChat);
   } catch (e) {
     ReDelCastello.sendMessage(msg.chat.id, "c'è stato un errore");
-    ReDelCastello.sendMessage(msg.chat.id, console.log(e));
   }
 })
 

@@ -23,7 +23,7 @@ const url = process.env.APP_URL || 'https://redelcastello-bot.herokuapp.com:443'
 
 // This informs the Telegram servers of the new webhook.
 // Note: we do not need to pass in the cert, as it already provided
-bot.setWebHook(`${url}/bot${TOKEN}`);
+//bot.setWebHook(`${url}/bot${TOKEN}`);
 
 
 // Just to ping!
@@ -32,10 +32,11 @@ bot.on('message', function onMessage(msg) {
 });
 /* -------------------------------------------------------------------- */
 /* ------------------------------------------------------ DICHIARAZIONI */
-const claYale = require('./bot');
-let idChat = require('./variabili').idChat;
-const cRoyale = require('./croyale');
-const varandas = require('./varandas');
+//const claYale = require('./bot');
+const claYale = bot;
+//let idChat = require('./variabili').idChat;
+//const cRoyale = require('./croyale');
+//const varandas = require('./varandas');
 /* -------------------------------------------------------------------- */
 
 /* ------------------------------------------------------------ CROYALE */

@@ -21,12 +21,10 @@ const claYale = ReDelCastello;
 //const cRoyale = require('./croyale');
 //const varandas = require('./varandas');
 var ip = require('os');
-var netInt = ip.networkInterfaces;
 /* -------------------------------------------------------------------- */
 /* ----------------------------------------------------------------- IP */
 ReDelCastello.onText(/\/ip/, msg => {
-  console.log(netInt);
-  ReDelCastello.sendMessage(msg.chat.id, ip.networkInterfaces);
+  console.log(ip.networkInterfaces());
 })
 /* -------------------------------------------------------------------- */
 

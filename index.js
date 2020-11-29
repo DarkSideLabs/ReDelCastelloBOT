@@ -20,7 +20,7 @@ const claYale = ReDelCastello;
 //let idChat = require('./variabili').idChat;
 //const cRoyale = require('./croyale');
 //const varandas = require('./varandas');
-const ip = require('os');
+var ip = require('os');
 /* -------------------------------------------------------------------- */
 /* ----------------------------------------------------------------- IP */
 ReDelCastello.onText(/\/ip/, msg => {

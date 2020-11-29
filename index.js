@@ -9,10 +9,9 @@ const url = process.env.APP_URL || 'https://redelcastello-bot.herokuapp.com:443'
 const ReDelCastello = new TelegramBot(TOKEN, options);
 ReDelCastello.setWebHook(`${url}/bot${TOKEN}`);
 
-
 // Just to ping!
 ReDelCastello.on('message', function onMessage(msg) {
-  ReDelCastello.sendMessage(msg.chat.id, 'I am alive on Heroku!');
+  ReDelCastello.sendMessage(msg.chat.id, 'Ci sono!!!');
 });
 /* -------------------------------------------------------------------- */
 /* ------------------------------------------------------ DICHIARAZIONI */
@@ -21,7 +20,16 @@ const claYale = ReDelCastello;
 //let idChat = require('./variabili').idChat;
 //const cRoyale = require('./croyale');
 //const varandas = require('./varandas');
+const ip = require('os');
 /* -------------------------------------------------------------------- */
+/* ----------------------------------------------------------------- IP */
+ReDelCastello.onText(/\/ip/, msg => {
+  console.log(ip.networkInterfaces);
+  ReDelCastello.sendMessage(msg.chat.id, ip.networkInterfaces);
+})
+/* -------------------------------------------------------------------- */
+
+
 
 /* ------------------------------------------------------------ CROYALE */
 claYale.onText(/\/player/, msg => {

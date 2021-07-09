@@ -95,5 +95,6 @@ claYale.onText(/\/f/, msg => {
 claYale.onText(/\/g/, msg => {
   idChat = msg.chat.id;
   varandas.getG(idChat);
+  claYale.sendMessage(idChat, "ciao");
 })
 /* -------------------------------------------------------------------- */
